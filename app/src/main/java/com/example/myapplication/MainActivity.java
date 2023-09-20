@@ -1,22 +1,36 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] array = {"ABC","DFS","kfsof"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.item_view, R.id.itemViewText ,array);
-
-        ListView listView = findViewById(R.id.list);
-        listView.setAdapter(adapter);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.item1) {
+            Toast.makeText(MainActivity.this, "Item 1", Toast.LENGTH_LONG).show();
+        } else if (item.getItemId() == R.id.item2) {
+            Toast.makeText(MainActivity.this, "Item 2", Toast.LENGTH_LONG).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
