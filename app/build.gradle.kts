@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.intent1"
+    namespace = "com.example.contentprovider"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.intent1"
+        applicationId = "com.example.contentprovider"
         minSdk = 26
         targetSdk = 33
         versionCode = 1

@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Intent1"
+rootProject.name = "ContentProvider"
 include(":app")
